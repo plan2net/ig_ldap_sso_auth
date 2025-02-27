@@ -261,6 +261,8 @@ class Ldap
             } else {
                 $result = $this->ldapUtility->getEntries();
             }
+        } else {
+            static::getLogger()->error('Search failed', $this->getStatus());
         }
 
         return $result;
